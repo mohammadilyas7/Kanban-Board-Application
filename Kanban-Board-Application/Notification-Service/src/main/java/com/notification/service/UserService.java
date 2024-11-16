@@ -16,5 +16,11 @@ public class UserService {
     }
 
 
+    public UserRepository getUserRepository() {
+        return userRepository;
+    }
 
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 }
