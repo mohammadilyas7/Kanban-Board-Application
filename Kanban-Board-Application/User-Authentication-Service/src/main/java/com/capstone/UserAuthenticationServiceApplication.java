@@ -20,6 +20,4 @@ public class UserAuthenticationServiceApplication {
 //		filterBean.addUrlPatterns("/protected/*");
 //		return filterBean;
 //	}
-
-
 }
