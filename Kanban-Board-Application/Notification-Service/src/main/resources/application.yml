@@ -1,17 +1,19 @@
 server:
- port: 8088
+ port: '8088'
 spring:
+ application:
+  name: notification-service
  data:
   mongodb:
    uri: mongodb://localhost:27017/KanbanNotification
- application:
-  name: notification-service
 erureka:
+ instance:
+  cloud:
+   loadbalancer:
+    enabled: 'false'
+  hostname: localhost
  cleint:
-  registerWithEureka: true
-  fetchRegistry: true
+  registerWithEureka: 'true'
+  fetchRegistry: 'true'
   serviceUrl:
    defaultZone: http://localhost:8761/eureka
- instance:
-  hostname: localhost
-

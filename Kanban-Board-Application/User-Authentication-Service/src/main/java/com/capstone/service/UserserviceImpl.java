@@ -19,7 +19,7 @@ public class UserserviceImpl implements Userservice {
         return userRepository.save(user);
     }
 
-    public User findByUseremailAndPasswordCheck(String useremail, String password) throws UserNotFoundException {
+    public User findByUserEmailAndPasswordCheck(String useremail, String password) throws UserNotFoundException {
         User user = userRepository.findByEmailAndPassword(useremail,password);
         if(user == null){
             throw new UserNotFoundException();

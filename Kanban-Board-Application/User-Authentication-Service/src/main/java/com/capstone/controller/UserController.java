@@ -29,7 +29,6 @@ public class UserController {
         return new ResponseEntity<String>("User Created",HttpStatus.OK);
     }
 
-//    @PutMapping("/password/{email}/{pass}")
     @PostMapping("/password/{email}/{pass}")
     public ResponseEntity<?> changePassword(@PathVariable String email,@PathVariable String pass){
         System.out.println("========= Inside the change method controller ==============");
@@ -47,7 +46,7 @@ public class UserController {
     public ResponseEntity<?> login(@RequestBody User user) throws UserNotFoundException {
         ResponseEntity responseEntity;
         try{
-            User user1 = userservice.findByUseremailAndPasswordCheck(user.getEmail(),user.getPassword());
+            User user1 = userservice.findByUserEmailAndPasswordCheck(user.getEmail(),user.getPassword());
             System.out.println("Check user name and Password");
             System.out.println(user1.getEmail()+" cheking it is corect or not  "+user1.getPassword());
             if (user1.getEmail().equals(user.getEmail()) && user1.getPassword().equals(user.getPassword())){
@@ -56,7 +55,6 @@ public class UserController {
                 responseEntity = new ResponseEntity<>(tokenMap,HttpStatus.OK);
             }else {
                 responseEntity = new ResponseEntity<>("Invalid User",HttpStatus.NOT_FOUND);
-                //throw new UserNotFoundException();
             }
         } catch (UserNotFoundException e) {
             e.printStackTrace();

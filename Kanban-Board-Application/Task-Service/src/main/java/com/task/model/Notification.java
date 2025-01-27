@@ -24,9 +24,6 @@ public class Notification {
     private String assinedName;
     private String taskStatus;
 
-    public Notification(String spaceName, List<String> email, List<Task> taskList) {
-    }
-
     public String getNotificationId() {
         return notificationId;
     }

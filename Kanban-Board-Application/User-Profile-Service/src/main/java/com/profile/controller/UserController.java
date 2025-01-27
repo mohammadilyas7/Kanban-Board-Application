@@ -44,6 +44,4 @@ public class UserController {
     public ResponseEntity<List<User>> getAllUser(){
         return new ResponseEntity<>(userService.getAllUser(),HttpStatus.OK);
     }
-
-
 }
